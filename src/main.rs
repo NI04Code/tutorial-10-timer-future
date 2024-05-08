@@ -1,4 +1,3 @@
-
 use futures::{
     future::{BoxFuture, FutureExt},
     task::{waker_ref, ArcWake},
@@ -100,16 +99,28 @@ fn main() {
 
     // Spawn a task to print before and after waiting on a timer.
     spawner.spawn(async {
-        println!("Naufal Ichsan Mac: howdy!");
+        println!("2206082013 Mac: howdy!");
         // Wait for our timer future to complete after two seconds.
         TimerFuture::new(Duration::new(2, 0)).await;
-        println!("Naufal Ichsan Mac: done!");
+        println!("2206082013 Mac: done!");
+    });
+    spawner.spawn(async {
+        println!("2206082013 Mac: howdy2!");
+        // Wait for our timer future to complete after two seconds.
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("2206082013 Mac: done2!");
+    });
+    spawner.spawn(async {
+        println!("2206082013 Mac: howdy3!");
+        // Wait for our timer future to complete after two seconds.
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("2206082013 Mac: done3!");
     });
 
     println!("2206082013 Mac: hey hey");
     // Drop the spawner so that our executor knows it is finished and won't
     // receive more incoming tasks to run.
-    drop(spawner);
+    // drop(spawner);
 
     // Run the executor until the task queue is empty.
     // This will print "howdy!", pause, and then print "done!".
