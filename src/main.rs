@@ -106,6 +106,7 @@ fn main() {
         println!("Naufal Ichsan Mac: done!");
     });
 
+    println!("2206082013 Mac: hey hey");
     // Drop the spawner so that our executor knows it is finished and won't
     // receive more incoming tasks to run.
     drop(spawner);
